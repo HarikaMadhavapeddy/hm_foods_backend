@@ -6,6 +6,9 @@ const stripe = require("stripe")(
 const parser = require("body-parser");
 const app = express();
 app.use(cors());
+app.get("/", (req, res) => {
+  res.send("foodapp");
+});
 app.use(parser.json());
 const port = 8080;
 app.post("/create-payment-session", async (req, res) => {
